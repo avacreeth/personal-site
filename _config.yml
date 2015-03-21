@@ -11,3 +11,8 @@ github_username:  andycreeth
 # Build settings
 markdown: kramdown
 exclude: ["Gemfile", "Gemfile.lock", "Rakefile", "README.md"]
+
+# Jekyll Assets config
+assets:
+  js_compressor: uglifier
+  css_compressor: sass
