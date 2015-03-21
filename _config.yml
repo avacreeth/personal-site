@@ -1,0 +1,12 @@
+# Site settings
+title: Andy Creeth
+email: your-email@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+  This is my personal website.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://andycreeth.github.io" # the base hostname & protocol for your site
+twitter_username: andycreeth
+github_username:  andycreeth
+
+# Build settings
+markdown: kramdown
