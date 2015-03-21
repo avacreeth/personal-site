@@ -10,4 +10,4 @@ github_username:  andycreeth
 
 # Build settings
 markdown: kramdown
-exclude: ["Gemfile", "Gemfile.lock", "README.md"]
+exclude: ["Gemfile", "Gemfile.lock", "Rakefile", "README.md"]
