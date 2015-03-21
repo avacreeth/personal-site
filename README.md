@@ -1,2 +1,2 @@
-# andycreeth.github.io
+# personal-site
 My personal website.
