@@ -10,3 +10,4 @@ github_username:  andycreeth
 
 # Build settings
 markdown: kramdown
+exclude: [Gemfile, Gemfile.lock, README.md]
