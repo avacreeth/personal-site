@@ -53,6 +53,7 @@ GAME.Box.prototype = {
         if (this.sprite.input.isDragged) {
             this.sprite.body.x = this.game.input.activePointer.worldX;
             this.sprite.body.y = this.game.input.activePointer.worldY;
+            this.sprite.body.setZeroVelocity();
         }
     }
 };

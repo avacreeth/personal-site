@@ -13,11 +13,15 @@ GAME.Main.prototype = {
         this.subtitle = new GAME.Subtitle(this.game, this.game.world.centerX, this.stackY + 65);
         this.drawClickDrag();
         this.drawBoxStack();
+        this.player = new GAME.Player(this.game, this.game.world.centerX, 700);
+        
+        this.cursors = this.game.input.keyboard.createCursorKeys();
     },
     
     update: function() {
         this.subtitle.update();
         this.stack.update();
+        this.player.update(this.cursors);
     },
     
     drawBoxStack: function() {
