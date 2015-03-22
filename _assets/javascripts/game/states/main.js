@@ -6,23 +6,60 @@ GAME.Main.prototype = {
 
     create: function() {
         this.game.physics.startSystem(Phaser.Physics.P2JS);
-        this.game.physics.p2.gravity.y = 100;
-        
-        this.title = new GAME.Title(this.game);
+        this.game.physics.p2.gravity.y = 300;
+
         this.subtitle = new GAME.Subtitle(this.game);
-        
-        this.game.input.onDown.add(this.onDown, this);
-    },
-    
-    onDown: function() {
-        this.title.enablePhysics();
-        this.game.input.onDown.remove(this.onDown, this);
+        this.drawBoxStack();
     },
     
     update: function() {
-        this.game.physics.arcade.collide(this.title.sprite, this.subtitle.sprite);
-        
-        this.title.update();
         this.subtitle.update();
-    }
+        this.stack.update();
+    },
+    
+    drawBoxStack: function() {
+        this.stack = new GAME.BoxStack(this.game,
+            this.game.world.centerX - 130, 350, 80, 80, 4, this.stackText);
+    },
+    
+    stackText: [
+        [
+            {
+                text: 'HTML'
+            }
+        ],
+        [
+            {
+                text: 'CSS'
+            },
+            {
+                text: 'Sass'
+            }
+        ],
+        [
+            {
+                text: 'JS'
+            },
+            {
+                text: 'Backbone'
+            },
+            {
+                text: 'Phaser'
+            }
+        ],
+        [
+            {
+                text: 'Ruby',
+            },
+            {
+                text: 'Rails'
+            },
+            {
+                text: 'SQL'
+            },
+            {
+                text: 'Mongo'
+            }
+        ]
+    ]
 };

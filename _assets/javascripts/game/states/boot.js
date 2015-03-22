@@ -9,7 +9,7 @@ GAME.Boot.prototype = {
     
     create: function() {
         this.game.scale.scaleMode = Phaser.ScaleManager.NO_SCALE;
-        this.game.stage.backgroundColor = 0xfafafa;
+        //this.game.stage.backgroundColor = 0xfafafa;
         this.game.state.start('preloader');
     }
 };
