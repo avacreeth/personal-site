@@ -2,6 +2,12 @@ body {
     margin: 0;
     font-family: 'Roboto Slab', serif;
     
+    a {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
     canvas {
         position: absolute;
         top: 0;
@@ -14,6 +20,21 @@ body {
         .header {
             font-weight: normal;
             font-size: 30pt;
+        }
+        
+        .below-game {
+            position: relative;
+            margin: 400px auto 0;
+            width: 460px;
+            
+            z-index: 1000;
+            
+            .block-text {
+                text-align: justify;
+                
+                font-size: 16px;
+                line-height: 30px;
+            }
         }
     }
 }
