@@ -1,6 +1,8 @@
 // The main game state
 
-GAME.Main = function() {};
+GAME.Main = function() {
+    this.stackY = 380;
+};
 
 GAME.Main.prototype = {
 
@@ -8,7 +10,8 @@ GAME.Main.prototype = {
         this.game.physics.startSystem(Phaser.Physics.P2JS);
         this.game.physics.p2.gravity.y = 300;
 
-        this.subtitle = new GAME.Subtitle(this.game);
+        this.subtitle = new GAME.Subtitle(this.game, this.game.world.centerX, this.stackY + 65);
+        this.drawClickDrag();
         this.drawBoxStack();
     },
     
@@ -19,7 +22,11 @@ GAME.Main.prototype = {
     
     drawBoxStack: function() {
         this.stack = new GAME.BoxStack(this.game,
-            this.game.world.centerX - 130, 350, 80, 80, 4, this.stackText);
+            this.game.world.centerX - 130, this.stackY, 80, 80, 4, this.stackText);
+    },
+    
+    drawClickDrag: function() {
+        this.drag = this.game.add.sprite(this.game.world.centerX - 285, 125, 'clickDrag');
     },
     
     stackText: [
@@ -38,13 +45,13 @@ GAME.Main.prototype = {
         ],
         [
             {
-                text: 'JS'
+                text: 'Java-\nScript'
             },
             {
-                text: 'Backbone'
+                text: 'Back-\nbone'
             },
             {
-                text: 'Phaser'
+                text: 'jQuery'
             }
         ],
         [

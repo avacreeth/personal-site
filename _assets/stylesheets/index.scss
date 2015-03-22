@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Slab', serif;
     
     canvas {
         position: absolute;
@@ -9,12 +9,11 @@ body {
     }
     
     .home {
-        width: 900px;
-        margin-left: auto;
-        margin-right: auto;
-        
         text-align: center;
-        
-        background-color: #ddd;
+
+        .header {
+            font-weight: normal;
+            font-size: 30pt;
+        }
     }
 }

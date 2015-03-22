@@ -1,13 +1,15 @@
 // The static physics enabled subtitle pbject
 
-GAME.Subtitle = function(game) {
+GAME.Subtitle = function(game, x, y) {
     this.game = game;
+    this.x = x;
+    this.y = y;
     this.init();
 };
 
 GAME.Subtitle.prototype = {
     init: function() {
-        this.sprite = this.game.add.sprite(this.game.world.centerX, 410, 'subtitle');
+        this.sprite = this.game.add.sprite(this.x, this.y, 'fullStack');
         this.game.physics.p2.enable(this.sprite);
         this.sprite.body.static = true;
     },
