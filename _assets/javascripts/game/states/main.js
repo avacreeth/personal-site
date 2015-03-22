@@ -5,30 +5,24 @@ GAME.Main = function() {};
 GAME.Main.prototype = {
 
     create: function() {
-        this.drawTitle();
-        this.drawSubtitle();
+        this.game.physics.startSystem(Phaser.Physics.P2JS);
+        this.game.physics.p2.gravity.y = 100;
+        
+        this.title = new GAME.Title(this.game);
+        this.subtitle = new GAME.Subtitle(this.game);
+        
+        this.game.input.onDown.add(this.onDown, this);
+    },
+    
+    onDown: function() {
+        this.title.enablePhysics();
+        this.game.input.onDown.remove(this.onDown, this);
     },
     
     update: function() {
+        this.game.physics.arcade.collide(this.title.sprite, this.subtitle.sprite);
         
-    },
-    
-    drawTitle: function() {
-        var text = 'Andy Creeth';
-        
-        this.title = this.game.add.text(this.game.world.centerX - 100, 250, text, {
-            font: '70px "Roboto"'
-        });
-        this.title.anchor.set(0.5);
-    },
-    
-    drawSubtitle: function() {
-        var text = 'Full Stack Developer';
-        
-        this.subtitle = this.game.add.text(this.game.world.centerX + 100, 350, text, {
-            font: '40px "Roboto"'
-        });
-        this.subtitle.anchor.set(0.5);
+        this.title.update();
+        this.subtitle.update();
     }
-    
 };
