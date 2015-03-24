@@ -10,10 +10,13 @@ GAME.Main.prototype = {
         this.game.physics.startSystem(Phaser.Physics.P2JS);
         this.game.physics.p2.gravity.y = 300;
 
+        // Helper text is behind all
+        this.bgHelpers = this.game.add.group();
+
         this.subtitle = new GAME.Subtitle(this.game, this.game.world.centerX, this.stackY + 65);
         this.drawClickDrag();
         this.drawBoxStack();
-        this.player = new GAME.Player(this.game, this.game.world.centerX, 700);
+        this.wireSpawn();
         
         this.cursors = this.game.input.keyboard.createCursorKeys();
     },
@@ -21,7 +24,10 @@ GAME.Main.prototype = {
     update: function() {
         this.subtitle.update();
         this.stack.update();
-        this.player.update(this.cursors);
+        
+        if (this.player) {
+            this.player.update(this.cursors);
+        }
     },
     
     drawBoxStack: function() {
@@ -30,7 +36,17 @@ GAME.Main.prototype = {
     },
     
     drawClickDrag: function() {
-        this.drag = this.game.add.sprite(this.game.world.centerX - 285, 125, 'clickDrag');
+        this.drag = this.bgHelpers.create(this.game.world.centerX - 285, 125, 'clickDrag');
+    },
+    
+    wireSpawn: function() {
+        $('.spawner').click(function() {
+            $('.spawner').unbind('click');
+            this.drag.kill();
+            this.cursor = this.bgHelpers.create(this.game.world.centerX + 25, 150, 'cursor');
+            this.player = new GAME.Player(this.game, this.game.world.centerX, 400);
+            this.stack.explode();
+        }.bind(this));
     },
     
     stackText: [
@@ -60,7 +76,7 @@ GAME.Main.prototype = {
         ],
         [
             {
-                text: 'Ruby',
+                text: 'Ruby'
             },
             {
                 text: 'Rails'

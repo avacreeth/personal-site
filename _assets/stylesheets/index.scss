@@ -23,17 +23,19 @@ body {
         }
         
         .below-game {
-            position: relative;
             margin: 400px auto 0;
             width: 460px;
-            
-            z-index: 1000;
             
             .block-text {
                 text-align: justify;
                 
                 font-size: 16px;
                 line-height: 30px;
+            }
+            
+            .clickable {
+                position: relative;
+                z-index: 1000;
             }
         }
     }

@@ -9,6 +9,7 @@ GAME.Preloader.prototype = {
         this.game.load.image('fullStack', GAME.assets.fullStack);
         this.game.load.image('stackTech', GAME.assets.stackTech);
         this.game.load.image('clickDrag', GAME.assets.clickDrag);
+        this.game.load.image('cursor', GAME.assets.cursor);
         this.game.load.spritesheet('player', GAME.assets.player, 64, 64);
     },
     

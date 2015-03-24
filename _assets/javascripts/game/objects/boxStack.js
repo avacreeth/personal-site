@@ -37,6 +37,15 @@ GAME.BoxStack.prototype = {
         }
     },
     
+    explode: function() {
+        for (var i = 0; i < this.boxes.length; i++) {
+            var body = this.boxes[i].sprite.body;
+            
+            body.velocity.x = 10000 * (1 / (-1 * (this.game.world.centerX - body.x)));
+            body.velocity.y = 1000;
+        }
+    },
+    
     update: function() {
         // Update each box
         for (var i = 0; i < this.boxes.length; i++) {
