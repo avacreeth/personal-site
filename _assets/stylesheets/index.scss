@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Roboto Slab', serif;
-    
+        
     a {
         color: black;
         text-decoration: none;
@@ -18,8 +18,17 @@ body {
         text-align: center;
 
         .header {
+            margin: 0;
+            padding: 20px;
+            
             font-weight: normal;
             font-size: 30pt;
+            color: white;
+            
+            box-shadow: 0 5px 5px -2px #666;
+            text-shadow: 3px 3px 5px #000;
+            
+            background: linear-gradient(to right, #111 0%, #272727 50%, #111 100%);
         }
         
         .below-game {
@@ -43,7 +52,7 @@ body {
             
             .passion-for {
                 font-weight: normal;
-                font-size: 40px;
+                font-size: 30pt;
             }
             
             .interests {
@@ -51,8 +60,10 @@ body {
                 text-align: justify;
                 padding: 0;
                 
-                li {
-                    margin-bottom: 10px;
+                >li {
+                    margin-bottom: 20px;
+                    
+                    box-shadow: 0 0 7px 0 #333;
                 }
                 
                 .section-content {
@@ -106,7 +117,7 @@ body {
                 .game-section {
                     background: url(image-path('game-bg.png'));
                     background-size: cover;
-                    background-position: center top;
+                    background-position: center;
                 }
                 
                 .mountain-section {
