@@ -37,13 +37,15 @@ GAME.Main.prototype = {
     
     drawClickDrag: function() {
         this.drag = this.bgHelpers.create(this.game.world.centerX - 285, 215, 'clickDrag');
+        this.drag.scale = { x: 0.37, y: 0.37 };
     },
     
     wireSpawn: function() {
         $('.spawner').click(function() {
             $('.spawner').unbind('click');
+            $('body').animate({ scrollTop: 0 }, 'fast');
             this.drag.kill();
-            this.cursor = this.bgHelpers.create(this.game.world.centerX + 25, 150, 'cursor');
+            this.cursor = this.bgHelpers.create(this.game.world.centerX + 30, 230, 'cursor');
             this.player = new GAME.Player(this.game, this.game.world.centerX, 400);
             this.stack.explode();
         }.bind(this));
@@ -71,7 +73,7 @@ GAME.Main.prototype = {
                 text: 'Back-\nbone'
             },
             {
-                text: 'jQuery'
+                text: ' jQuery '
             }
         ],
         [

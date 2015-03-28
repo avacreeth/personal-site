@@ -18,13 +18,14 @@ GAME.Box.prototype = {
         bmd.ctx.fillRect(0, 0, this.sizeX, this.sizeY);
 
         bmd.ctx.lineWidth = 5;
-        bmd.ctx.strokeStyle = '#000000';
+        bmd.ctx.strokeStyle = '#222222';
         bmd.ctx.strokeRect(0, 0, this.sizeX, this.sizeY);
         
         this.sprite = this.game.add.sprite(this.x, this.y, bmd);
         this.game.physics.p2.enable(this.sprite);
         this.sprite.body.collideWithWorldBounds = true;
         this.sprite.inputEnabled = true;
+        this.sprite.alpha = 1;
         
         this.draggable();
         
@@ -35,6 +36,7 @@ GAME.Box.prototype = {
         this.textSprite = this.game.add.text(0, 0, this.text, {
             font: '20px "Indie Flower"'
         });
+        this.textSprite.lineSpacing = 2;
         this.textSprite.anchor.set(0.5);
         this.sprite.addChild(this.textSprite);
     },

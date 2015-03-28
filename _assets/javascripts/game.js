@@ -3,7 +3,10 @@
 //= require_tree ./game/objects
 
 $(function() {
-    var game = new Phaser.Game('100', 650, Phaser.AUTO, '', null, true);
+    var $container = $('#game-container');
+    
+    var game = new Phaser.Game($container.width(), $container.height(),
+        Phaser.AUTO, 'game-container', null, true);
     game.state.add('boot', GAME.Boot);
     game.state.add('preloader', GAME.Preloader);
     game.state.add('main', GAME.Main);
