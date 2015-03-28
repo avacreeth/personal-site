@@ -14,7 +14,7 @@ GAME.Box.prototype = {
     init: function() {
         var bmd = this.game.add.bitmapData(this.sizeX, this.sizeY);
 
-        bmd.ctx.fillStyle = '#ffffff';
+        bmd.ctx.fillStyle = '#eeeeee';
         bmd.ctx.fillRect(0, 0, this.sizeX, this.sizeY);
 
         bmd.ctx.lineWidth = 5;
@@ -33,7 +33,7 @@ GAME.Box.prototype = {
     
     drawText: function() {
         this.textSprite = this.game.add.text(0, 0, this.text, {
-            font: '12px "Press Start 2P"'
+            font: '20px "Indie Flower"'
         });
         this.textSprite.anchor.set(0.5);
         this.sprite.addChild(this.textSprite);

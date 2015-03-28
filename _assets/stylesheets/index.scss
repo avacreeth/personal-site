@@ -19,35 +19,27 @@ body {
         text-align: center;
 
         .header {
+            position: absolute;
+            top: 0;
             margin: 0;
             padding: 20px;
             
             font-weight: normal;
             font-size: 30pt;
             color: white;
-            
-            /* box-shadow: 0 5px 5px -2px #666; */
-            text-shadow: 3px 3px 5px #000;
-            
-            background: linear-gradient(to right, #111 0%, #272727 50%, #111 100%);
         }
         
         .spacer {
-            height: 180px;
-            padding-top: 370px;
+            height: 650px;
             margin: 0;
             
-            box-shadow: 0 0px 6px 6px #000;
-        }
-        
-        .block-text {
-            margin: 10px auto;
-            width: 460px;
-            
-            text-align: justify;
-            
-            font-size: 16px;
-            line-height: 30px;
+            background: linear-gradient(
+                rgba(10,20,30,0.5) 0%,
+                rgba(0,0,0,0) 100%),
+                url(image-path('summit.png'));
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
         }
         
         .clickable {
@@ -56,7 +48,7 @@ body {
         }
         
         .passion-for {
-            margin: 0;
+            margin: 10px;
             font-weight: normal;
             font-size: 30pt;
         }
@@ -64,6 +56,8 @@ body {
         .below-game {
             margin: 0;
             width: 100%;
+            
+            background: white;
             
             .interests {
                 margin: 0;
@@ -136,8 +130,8 @@ body {
                 
                 .code-section {
                     background: linear-gradient(
-                        rgba(0,0,0,0.6),
-                        rgba(0,0,0,0.6)),
+                        rgba(40,50,60,0.6),
+                        rgba(40,50,60,0.6)),
                         url(image-path('code-bg.png'));
                     background-size: cover;
                     background-position: center top;
@@ -145,8 +139,8 @@ body {
                 
                 .music-section {
                     background: linear-gradient(
-                        rgba(0,0,0,0.7),
-                        rgba(0,0,0,0.7)),
+                        rgba(40,50,60,0.7),
+                        rgba(40,50,60,0.7)),
                         url(image-path('music-bg.png'));
                     background-size: cover;
                     background-position: center top;
@@ -154,8 +148,8 @@ body {
                 
                 .game-section {
                     background: linear-gradient(
-                        rgba(0,0,0,0.7),
-                        rgba(0,0,0,0.7)),
+                        rgba(40,50,60,0.7),
+                        rgba(40,50,60,0.7)),
                         url(image-path('game-bg.png'));
                     background-size: cover;
                     background-position: center;
@@ -163,8 +157,8 @@ body {
                 
                 .mountain-section {
                     background: linear-gradient(
-                        rgba(0,0,0,0.7),
-                        rgba(0,0,0,0.7)),
+                        rgba(40,50,60,0.7),
+                        rgba(40,50,60,0.7)),
                         url(image-path('mountain-bg.png'));
                     background-size: cover;
                     background-position: center;

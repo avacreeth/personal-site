@@ -18,7 +18,7 @@ GAME.Preloader.prototype = {
         
         WebFont.load({
             google: {
-                families: ['Press Start 2P']
+                families: ['Indie Flower']
             },
             active: function() {
                 _this.game.state.start('main');

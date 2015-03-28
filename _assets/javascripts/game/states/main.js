@@ -1,7 +1,7 @@
 // The main game state
 
 GAME.Main = function() {
-    this.stackY = 380;
+    this.stackY = 470;
 };
 
 GAME.Main.prototype = {
@@ -36,7 +36,7 @@ GAME.Main.prototype = {
     },
     
     drawClickDrag: function() {
-        this.drag = this.bgHelpers.create(this.game.world.centerX - 285, 125, 'clickDrag');
+        this.drag = this.bgHelpers.create(this.game.world.centerX - 285, 215, 'clickDrag');
     },
     
     wireSpawn: function() {
