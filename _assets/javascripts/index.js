@@ -28,7 +28,8 @@ $(function() {
     
     function wireFancybox() {
         $('.fancybox').fancybox({
-            padding: 0
+            padding: 0,
+            type: 'iframe'
         });
     }
     
