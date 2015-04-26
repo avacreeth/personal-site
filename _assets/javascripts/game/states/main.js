@@ -42,12 +42,13 @@ GAME.Main.prototype = {
     
     wireSpawn: function() {
         $('.spawner').click(function() {
-            $('.spawner').unbind('click');
             $('body').animate({ scrollTop: 0 }, 'fast');
-            this.drag.kill();
-            this.cursor = this.bgHelpers.create(this.game.world.centerX + 30, 230, 'cursor');
-            this.player = new GAME.Player(this.game, this.game.world.centerX, 400);
-            this.stack.explode();
+            if (!this.player) {
+                this.drag.kill();
+                this.cursor = this.bgHelpers.create(this.game.world.centerX + 30, 230, 'cursor');
+                this.player = new GAME.Player(this.game, this.game.world.centerX, 400);
+                this.stack.explode();
+            }
         }.bind(this));
     },
     
